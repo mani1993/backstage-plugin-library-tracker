@@ -32,36 +32,64 @@
 
 ## Branching strategy
 
-We follow **feature branching** — `main` is always releasable and never receives direct commits.
+`main` is always production-ready. All work goes through short-lived branches and pull requests.
 
 ```
-main          ← production-ready releases only, merged via PR from dev
-└── dev       ← integration branch, merged via PR from feature branches
-    └── feature/<short-description>   ← one branch per feature / fix
+main   ← releases only — merged via PR from dev (or hotfix for urgent patches)
+└── dev  ← integration branch — merged via PR from work branches
+    ├── feature/<description>   new functionality
+    ├── fix/<issue>-<description>   bug fixes tied to an issue
+    ├── issue/<issue>-<description>   general issue work
+    ├── chore/<description>   maintenance, deps, config
+    └── docs/<description>   documentation only
+
+hotfix/<description>   ← branches off main, merges to BOTH main and dev
 ```
 
-**Workflow for every change:**
+### Branch types
+
+| Prefix | When to use | Base branch | PR target |
+| ------ | ----------- | ----------- | --------- |
+| `feature/` | New feature or enhancement | `dev` | `dev` |
+| `fix/<issue>-` | Bug fix linked to a GitHub issue | `dev` | `dev` |
+| `issue/<issue>-` | Any work tied to a GitHub issue | `dev` | `dev` |
+| `chore/` | Deps, config, tooling, CI — no behaviour change | `dev` | `dev` |
+| `docs/` | Documentation only | `dev` | `dev` |
+| `hotfix/` | Urgent production patch — cannot wait for `dev` | `main` | `main` + `dev` |
+
+### Standard workflow (feature / fix / issue / chore / docs)
 
 ```bash
-# 1. Start from an up-to-date dev
 git checkout dev && git pull
+git checkout -b fix/42-wrong-semver-patch   # or feature/, issue/, chore/, docs/
 
-# 2. Create a feature branch
-git checkout -b feature/my-thing
-
-# 3. Make changes, commit locally
-# 4. Push and open a PR → dev
+# make changes and commit
+git push origin fix/42-wrong-semver-patch
+# open PR → dev
 ```
 
-Once the PR is reviewed and merged into `dev`, a separate PR ships `dev → main` to release.
+### Hotfix workflow
+
+Use only for critical production bugs that cannot wait for the next `dev → main` release.
+
+```bash
+git checkout main && git pull
+git checkout -b hotfix/registry-timeout
+
+# make the minimal fix and commit
+git push origin hotfix/registry-timeout
+# open PR → main (gets your approval + CI)
+# after merging to main, also open PR hotfix → dev to keep branches in sync
+```
 
 **Rules:**
 
 | Rule | Detail |
 | ---- | ------ |
-| No direct commits | `main` and `dev` are protected branches |
-| Branch naming | Must start with `feature/`, `fix/`, `chore/`, or `docs/` |
-| Clean up | Delete the feature branch after it is merged |
+| No direct commits | `main` and `dev` are protected — always use a PR |
+| Branch naming | Must match one of the prefixes above — enforced by CI |
+| Issue reference | `fix/` and `issue/` branches must include the issue number |
+| Clean up | Delete the branch after it is merged |
 | Force-push | Never on `main` or `dev` |
 
 ---
