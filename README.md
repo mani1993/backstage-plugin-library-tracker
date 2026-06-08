@@ -135,8 +135,6 @@ repos, and everything downstream is concurrency-limited.
 
 ## Install
 
-Install into an existing Backstage app:
-
 ```bash
 # backend
 yarn --cwd packages/backend add backstage-plugin-library-tracker-backend
@@ -150,7 +148,34 @@ yarn --cwd packages/app add backstage-plugin-library-tracker
 backend.add(import('backstage-plugin-library-tracker-backend'));
 ```
 
-**Frontend — org-wide page** — `packages/app/src/App.tsx`:
+---
+
+### New Backstage frontend system
+
+Import from the `/alpha` subpath. The plugin self-registers its page, sidebar nav item, and entity tabs — no manual wiring needed.
+
+**`packages/app/src/App.tsx`:**
+
+```ts
+import libraryTrackerPlugin from 'backstage-plugin-library-tracker/alpha';
+
+const app = createApp({
+  features: [
+    libraryTrackerPlugin,
+    // ... other plugins
+  ],
+});
+```
+
+That's it. The plugin mounts the org-wide page at `/library-tracker`, adds itself to the sidebar, and attaches dependency tabs to Component and System entity pages automatically.
+
+---
+
+### Legacy frontend system
+
+Use this if your host app has not migrated to the new Backstage frontend system yet.
+
+**Org-wide page** — `packages/app/src/App.tsx`:
 
 ```tsx
 import { LibraryTrackerPage } from 'backstage-plugin-library-tracker';
@@ -158,7 +183,7 @@ import { LibraryTrackerPage } from 'backstage-plugin-library-tracker';
 <Route path="/library-tracker" element={<LibraryTrackerPage />} />;
 ```
 
-**Frontend — entity tab** — `packages/app/src/components/catalog/EntityPage.tsx`:
+**Entity tab** — `packages/app/src/components/catalog/EntityPage.tsx`:
 
 ```tsx
 import {
@@ -178,7 +203,7 @@ import {
 </EntityLayout.Route>
 ```
 
-**Frontend — sidebar icon** — `packages/app/src/components/Root/Root.tsx`:
+**Sidebar icon** — `packages/app/src/components/Root/Root.tsx`:
 
 ```tsx
 import { LibraryTrackerIcon } from 'backstage-plugin-library-tracker';
