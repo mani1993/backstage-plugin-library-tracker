@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src", "dev"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "outDir": "../../dist-types/packages/frontend",
+    "rootDir": ".",
+    "jsx": "react-jsx"
+  }
+}
