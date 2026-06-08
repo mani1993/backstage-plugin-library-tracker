@@ -31,16 +31,19 @@ jobs:
         run: yarn build
 
       - name: Publish common
-        run: yarn workspace backstage-plugin-library-tracker-common publish --access public --no-git-tag-version
+        working-directory: packages/common
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish backend
-        run: yarn workspace backstage-plugin-library-tracker-backend publish --access public --no-git-tag-version
+        working-directory: packages/backend
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish frontend
-        run: yarn workspace backstage-plugin-library-tracker publish --access public --no-git-tag-version
+        working-directory: packages/frontend
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
