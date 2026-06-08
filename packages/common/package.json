@@ -13,7 +13,13 @@
     "types": "dist/index.d.ts"
   },
   "backstage": {
-    "role": "common-library"
+    "role": "common-library",
+    "pluginId": "library-tracker",
+    "pluginPackages": [
+      "backstage-plugin-library-tracker",
+      "backstage-plugin-library-tracker-backend",
+      "backstage-plugin-library-tracker-common"
+    ]
   },
   "sideEffects": false,
   "scripts": {

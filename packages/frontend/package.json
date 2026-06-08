@@ -14,7 +14,12 @@
   },
   "backstage": {
     "role": "frontend-plugin",
-    "pluginId": "library-tracker"
+    "pluginId": "library-tracker",
+    "pluginPackages": [
+      "backstage-plugin-library-tracker",
+      "backstage-plugin-library-tracker-backend",
+      "backstage-plugin-library-tracker-common"
+    ]
   },
   "sideEffects": false,
   "scripts": {
