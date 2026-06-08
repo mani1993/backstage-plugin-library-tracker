@@ -1,0 +1,41 @@
+name: Branch name check
+
+on:
+  pull_request:
+    branches: [main, dev]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Validate branch name
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check prefix
+        run: |
+          BRANCH="${{ github.head_ref }}"
+          echo "Branch: $BRANCH"
+
+          # Dependabot and release automation are exempt
+          if [[ "$BRANCH" == dependabot/* || "$BRANCH" == release/* ]]; then
+            echo "Exempt branch — skipping check."
+            exit 0
+          fi
+
+          VALID_PREFIXES="^(feature|fix|issue|hotfix|chore|docs)/"
+          if [[ ! "$BRANCH" =~ $VALID_PREFIXES ]]; then
+            echo ""
+            echo "Branch name '$BRANCH' does not follow the naming convention."
+            echo ""
+            echo "Must start with one of:"
+            echo "  feature/   — new functionality"
+            echo "  fix/       — bug fix (include issue number: fix/42-description)"
+            echo "  issue/     — issue work (include issue number: issue/42-description)"
+            echo "  hotfix/    — urgent production patch (base off main)"
+            echo "  chore/     — maintenance, deps, config"
+            echo "  docs/      — documentation only"
+            exit 1
+          fi
+
+          echo "Branch name is valid."
