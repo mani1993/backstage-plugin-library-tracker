@@ -11,6 +11,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.0] - 2026-06-08
+
+### Added
+
+- **New Backstage frontend system support** — `backstage-plugin-library-tracker/alpha` subpath export using `createFrontendPlugin` with `PageBlueprint`, `ApiBlueprint`, and `EntityContentBlueprint`; the plugin self-registers its org-wide page, sidebar nav item, and Component/System entity tabs — no manual wiring needed for apps that have migrated to `createApp({ features: [] })`
+- `@backstage/frontend-plugin-api` and `@backstage/core-compat-api` added as frontend package dependencies for the new system extensions
+
+---
+
 ## [0.1.1] - 2026-06-08
 
 ### Fixed
@@ -50,6 +59,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[Unreleased]: https://github.com/mani1993/backstage-plugin-library-tracker/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/mani1993/backstage-plugin-library-tracker/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/mani1993/backstage-plugin-library-tracker/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/mani1993/backstage-plugin-library-tracker/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/mani1993/backstage-plugin-library-tracker/releases/tag/v0.1.0
