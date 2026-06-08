@@ -4,7 +4,7 @@
 > Please read this guide before opening a PR — it covers setup, standards, and workflow.
 
 ![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
-![License](https://img.shields.io/badge/license-Apache--2.0-green)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 

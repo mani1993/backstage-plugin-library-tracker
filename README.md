@@ -6,7 +6,7 @@
 ![Backstage](https://img.shields.io/badge/Backstage-plugin-9BF0E1?logo=backstage&logoColor=white)
 ![Backend system](https://img.shields.io/badge/backend-new%20system-6E4BF4)
 ![Ecosystems](https://img.shields.io/badge/ecosystems-npm%20·%20Maven%20·%20Python%20·%20NuGet-blue)
-![License](https://img.shields.io/badge/license-Apache--2.0-green)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 `backstage-plugin-library-tracker` resolves each `Component`'s repository from its catalog
 `backstage.io/source-location` annotation and scans it **via VCS APIs only** — no cloning, built
@@ -316,4 +316,4 @@ surfaced in **Scan status**.
 
 ## License
 
-Apache-2.0
+MIT
