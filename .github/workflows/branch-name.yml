@@ -17,8 +17,8 @@ jobs:
           BRANCH="${{ github.head_ref }}"
           echo "Branch: $BRANCH"
 
-          # Dependabot and release automation are exempt
-          if [[ "$BRANCH" == dependabot/* || "$BRANCH" == release/* ]]; then
+          # Dependabot, release automation, and the dev integration branch are exempt
+          if [[ "$BRANCH" == dependabot/* || "$BRANCH" == release/* || "$BRANCH" == "dev" ]]; then
             echo "Exempt branch — skipping check."
             exit 0
           fi
