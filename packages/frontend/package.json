@@ -1,7 +1,7 @@
 {
   "name": "backstage-plugin-library-tracker",
   "description": "Frontend for the library-tracker Backstage plugin: org-wide dependency visibility",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "exports": {
