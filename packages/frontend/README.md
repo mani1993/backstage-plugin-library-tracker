@@ -12,7 +12,19 @@
 yarn --cwd packages/app add backstage-plugin-library-tracker
 ```
 
-## Usage
+## Usage — new Backstage frontend system
+
+Import from the `/alpha` subpath. The plugin self-registers its page, sidebar nav item, and entity tabs — no manual wiring needed.
+
+```ts
+import libraryTrackerPlugin from 'backstage-plugin-library-tracker/alpha';
+
+const app = createApp({
+  features: [libraryTrackerPlugin],
+});
+```
+
+## Usage — legacy frontend system
 
 **Org-wide page** — `packages/app/src/App.tsx`:
 

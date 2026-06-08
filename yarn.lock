@@ -1570,7 +1570,7 @@
     zod "^3.25.76 || ^4.0.0"
     zod-validation-error "^4.0.2"
 
-"@backstage/frontend-plugin-api@^0.17.0":
+"@backstage/frontend-plugin-api@^0.17.0", "@backstage/frontend-plugin-api@^0.17.1":
   version "0.17.1"
   resolved "https://registry.yarnpkg.com/@backstage/frontend-plugin-api/-/frontend-plugin-api-0.17.1.tgz#2e9164084a113f6f59d7fced59baf2c0b2b1c510"
   integrity sha512-qZBRz7RJARs2C87PzskIVdDKF5YqB3DaD6qvkMUmuNAOfzidnRbRW7HEp7s2wa+wuMayZk11+i64kRYIr/ytDw==
