@@ -1,0 +1,35 @@
+# Minimal config for the standalone dev harnesses (not a full Backstage app).
+app:
+  title: Library Tracker
+  baseUrl: http://localhost:3000
+
+organization:
+  name: Library Tracker
+
+backend:
+  baseUrl: http://localhost:7007
+  listen:
+    port: 7007
+  auth:
+    # Dev-only: allow the plugin's own service-to-service calls without external keys.
+    dangerouslyDisableDefaultAuthPolicy: true
+  database:
+    client: better-sqlite3
+    connection: ':memory:'
+
+# Provide a token for higher rate limits / private repos when scanning:
+# integrations:
+#   github:
+#     - host: github.com
+#       token: ${GITHUB_TOKEN}
+
+libraryTracker:
+  schedule:
+    frequency: { hours: 6 }
+    timeout: { minutes: 30 }
+    initialDelay: { seconds: 30 }
+  scan:
+    concurrency: 5
+  registry:
+    enableVersionCheck: true
+    cacheTtl: { hours: 24 }

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+dist-types/
+*.log
+.DS_Store
+
+# Backstage / tooling caches
+.turbo/
+coverage/
+*.tsbuildinfo
+
+# Local config that may carry secrets/tokens
+*.local.yaml
+app-config.local.yaml

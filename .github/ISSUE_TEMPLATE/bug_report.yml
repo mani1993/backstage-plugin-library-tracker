@@ -1,0 +1,88 @@
+name: 🐞 Bug report
+description: Report something that isn't working as expected
+title: '[Bug]: '
+labels: ['bug', 'needs-triage']
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to file a bug! Please search existing issues first.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the bug, including what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Be specific — the smaller the repro, the faster the fix.
+      placeholder: |
+        1. Configure '...'
+        2. Trigger a scan via '...'
+        3. Open '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the plugin is affected?
+      options:
+        - Scanner / incremental sync
+        - Ecosystem parser (npm / Maven / Python / NuGet)
+        - Unused-dependency detection
+        - Registry lookup / version drift
+        - REST API / backend
+        - Frontend (page, entity tab, occurrence viewer)
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ecosystem
+    attributes:
+      label: Ecosystem (if relevant)
+      options: ['npm', 'Maven', 'Python', 'NuGet', 'N/A']
+
+  - type: dropdown
+    id: provider
+    attributes:
+      label: VCS provider (if relevant)
+      options: ['GitHub', 'GitLab', 'Bitbucket', 'Azure DevOps', 'N/A']
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      placeholder: e.g. 0.1.0
+    validations:
+      required: true
+
+  - type: input
+    id: backstage-version
+    attributes:
+      label: Backstage version
+      placeholder: e.g. 1.45.0
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs / screenshots
+      description: Backend logs, console output, or screenshots. Redact secrets and tokens.
+      render: shell
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and this is not a duplicate
+          required: true
+        - label: I removed any secrets/tokens from logs and config I pasted
+          required: true

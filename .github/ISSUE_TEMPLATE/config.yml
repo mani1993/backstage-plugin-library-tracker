@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Questions & discussion
+    url: https://github.com/mani/backstage-plugin-library-tracker/discussions
+    about: For usage questions and open-ended ideas, please start a discussion instead of an issue.
+  - name: 🔒 Report a security issue
+    url: https://github.com/mani/backstage-plugin-library-tracker/security/advisories/new
+    about: Please report vulnerabilities privately, not as a public issue.
