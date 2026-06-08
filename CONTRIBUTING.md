@@ -70,6 +70,32 @@ The scanner is ecosystem-agnostic. To add one (e.g. Go, Gradle, Composer):
 Set usage confidence honestly: only flag a dependency `unused` when absence of an import is
 strong evidence (see the [Accuracy & limitations](README.md#accuracy--limitations) note).
 
+## Branching strategy
+
+We follow **feature branching** — `main` is always releasable and never receives direct commits.
+
+```
+main          ← production-ready releases only, merged via PR from dev
+└── dev       ← integration branch, merged via PR from feature branches
+    └── feature/<short-description>   ← one branch per feature / fix
+```
+
+**Workflow for every change:**
+
+1. Branch off `dev`:
+   ```bash
+   git checkout dev && git pull
+   git checkout -b feature/my-thing
+   ```
+2. Make changes, commit locally with clear messages.
+3. Open a PR **`feature/… → dev`**. All quality gates must be green.
+4. After review and merge into `dev`, open a PR **`dev → main`** to ship.
+
+**Rules:**
+- `main` and `dev` are protected — no force-pushes, no direct commits.
+- Branch names must start with `feature/`, `fix/`, `chore/`, or `docs/`.
+- Delete the feature branch after it is merged.
+
 ## Commits & pull requests
 
 - Write clear, imperative commit messages (e.g. `Add Gradle manifest parser`).
