@@ -1,0 +1,24 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    target-branch: dev
+    labels:
+      - dependencies
+    ignore:
+      # Backstage packages move together — update them manually as a set
+      - dependency-name: "@backstage/*"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    target-branch: dev
+    labels:
+      - dependencies
