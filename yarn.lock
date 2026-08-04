@@ -5918,6 +5918,11 @@ babel-preset-jest@^29.6.3:
     babel-plugin-jest-hoist "^29.6.3"
     babel-preset-current-node-syntax "^1.0.0"
 
+backstage-plugin-library-tracker-common@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/backstage-plugin-library-tracker-common/-/backstage-plugin-library-tracker-common-0.1.1.tgz#afc0c28f554b7a19df097b2b16722dbb31e34565"
+  integrity sha512-ky3MoASstM+1mUSWTx7YSpbLH5qxPKBG8D2LpnEM67TCRw8/DiCpG8t1IcTAh5wixuyG6G8AXXjzSx5KMTFnZQ==
+
 bail@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/bail/-/bail-2.0.2.tgz#d26f5cd8fe5d6f832a31517b9f7c356040ba6d5d"
@@ -9903,9 +9908,9 @@ iovalkey@^0.3.3:
     standard-as-callback "^2.1.0"
 
 ip-address@^10.2.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-10.2.0.tgz#805fc178b20c518bd4c8548b24fe30892d7f3206"
-  integrity sha512-/+S6j4E9AHvW9SWMSEY9Xfy66O5PWvVEJ08O0y5JGyEKQpojb0K0GKpz/v5HJ/G0vi3D2sjGK78119oXZeE0qA==
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/ip-address/-/ip-address-10.4.0.tgz#c5910bc541b6eae287765d1e4846be0308a05d93"
+  integrity sha512-oSK96Grm3aP6OrS263xVxbNDGVL7rzBtYdpGqlDG8iQdoenDoTs/nkki+DflYbAEE8Xl6o5YxhxlrKvI3nqKXQ==
 
 ipaddr.js@1.9.1:
   version "1.9.1"
