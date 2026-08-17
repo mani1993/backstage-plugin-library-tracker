@@ -5918,6 +5918,11 @@ babel-preset-jest@^29.6.3:
     babel-plugin-jest-hoist "^29.6.3"
     babel-preset-current-node-syntax "^1.0.0"
 
+backstage-plugin-library-tracker-common@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/backstage-plugin-library-tracker-common/-/backstage-plugin-library-tracker-common-0.1.1.tgz#afc0c28f554b7a19df097b2b16722dbb31e34565"
+  integrity sha512-ky3MoASstM+1mUSWTx7YSpbLH5qxPKBG8D2LpnEM67TCRw8/DiCpG8t1IcTAh5wixuyG6G8AXXjzSx5KMTFnZQ==
+
 bail@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/bail/-/bail-2.0.2.tgz#d26f5cd8fe5d6f832a31517b9f7c356040ba6d5d"
@@ -16382,9 +16387,9 @@ vm-browserify@^1.0.1:
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
 vm2@^3.11.3:
-  version "3.11.5"
-  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.11.5.tgz#6dcebf22c7bf77acf80571f26f1040ee626a97d0"
-  integrity sha512-RSrkBiwrj6FRU+QdqNs6KG0XdlvJCjpQ4GXiqmMbrhmwfu5k/XIMpAer0L8f6iuf0uJ3a4T1xJN126Q8yf0VIA==
+  version "3.11.6"
+  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.11.6.tgz#044ddbbd68c0157bc07b2e2fca20f38d3d673be7"
+  integrity sha512-35hVTcKieg7jJMntHhgWT5c2a1J2vmpXm66Xs1Z8ayHOJTj8rzIlXKzba3nO1Om/sonmnkjlAOMt9p8lYJXsWw==
   dependencies:
     acorn "^8.15.0"
     acorn-walk "^8.3.4"
