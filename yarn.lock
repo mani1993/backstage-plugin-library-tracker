@@ -5339,9 +5339,9 @@
     "@xtuc/long" "4.2.2"
 
 "@xmldom/xmldom@^0.8.3":
-  version "0.8.13"
-  resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.8.13.tgz#00d1dd940b218dff2e49309d410d8bb212159225"
-  integrity sha512-KRYzxepc14G/CEpEGc3Yn+JKaAeT63smlDr+vjB8jRfgTBBI9wRj/nkQEO+ucV8p8I9bfKLWp37uHgFrbntPvw==
+  version "0.8.15"
+  resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.8.15.tgz#71ebf80729e4e95221d519ac9b1e1eaea7784907"
+  integrity sha512-/5NV/vDALVFDXgLmfsy9TRCBlKwO2LNBFzpzvb9iIj+jR+eSc6DLYYvVOdivT/jm7MtU6TebYuRmzEOI7w40UA==
 
 "@xobotyi/scrollbar-width@^1.9.5":
   version "1.9.5"
@@ -5917,6 +5917,11 @@ babel-preset-jest@^29.6.3:
   dependencies:
     babel-plugin-jest-hoist "^29.6.3"
     babel-preset-current-node-syntax "^1.0.0"
+
+backstage-plugin-library-tracker-common@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/backstage-plugin-library-tracker-common/-/backstage-plugin-library-tracker-common-0.1.1.tgz#afc0c28f554b7a19df097b2b16722dbb31e34565"
+  integrity sha512-ky3MoASstM+1mUSWTx7YSpbLH5qxPKBG8D2LpnEM67TCRw8/DiCpG8t1IcTAh5wixuyG6G8AXXjzSx5KMTFnZQ==
 
 bail@^2.0.0:
   version "2.0.2"
